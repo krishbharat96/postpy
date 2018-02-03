@@ -54,9 +54,6 @@ def get_tables(filename, table_name_arr):
                     column_string.append(c.strip())
             tbl_copy.update({tbl:column_string})
 
-    print table_act_arr
-    print tbl_copy
-
     return_arr = []
     for t in table_name_arr:
         header_str = create_header_string(tbl_copy[t])
@@ -100,9 +97,6 @@ def get_table(filename, table_name):
                     column_string.append(c.strip())
 
             tbl_copy.update({tbl:column_string})
-
-    print table_act_arr
-    print tbl_copy
 
     header_str = create_header_string(tbl_copy[table_name])
     var_str = table_name + "_str"
