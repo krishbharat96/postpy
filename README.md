@@ -6,6 +6,7 @@ This an easy-to-use module that extracts table information directly from Postgre
 wget https://raw.githubusercontent.com/krishbharat96/postpy/master/postpy.py
 ```
 2. To use postpy, make sure you have unzipped and extracted the postgres .sql dump (let's call the file psqldmp.sql), and type in the commands below:
+
   a. Import package:
   ```
   import postpy as ppy
