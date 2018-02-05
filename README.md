@@ -13,10 +13,10 @@ wget https://raw.githubusercontent.com/krishbharat96/postpy/master/postpy.py
     ```
     b. You can obtain a single table or even obtain multiple tables by using the get_table(dump_filename, tablename) and           get_tables(dump_filename, ['table1', 'table2', ...])  methods respectively. For the get_tables method, the dataframes will     be stored as an array.
     ```
-    single_table_df = ppy.get_table(psqldump.sql, 'single_table')
+    single_table_df = ppy.get_table('psqldump.sql', 'single_table')
     ```
     ```
-    many_tables_df_arr = ppy.get_tables(psqldump.sql, ['table1', 'table2', 'table3'])
+    many_tables_df_arr = ppy.get_tables('psqldump.sql', ['table1', 'table2', 'table3'])
     ```
     c. After obtaining the dataframes, you can perform joins on the pandas dataframes either through using pandas tools or         using some parts of this package as well (which are derived from pandas tools). Simple left, right, outer, and inner joins     can be performed using this module. You can call the join methods through left_join(df1, col1, df2, col2, suffixl=(lsuf),     suffixr=(rsuf)). Col1 and Col2 are the two columns that you will be joining on. The two suffixes are, by default an           underscore followed by 'l', and 'r' respectively.
     ```
