@@ -210,35 +210,3 @@ def outer_join(df1, col1, df2, col2, suffixl="_l", suffixr="_r"):
 def select(df1, column_arr):
     fin_df = df1[column_arr]
     return fin_df
-
-##filename = "drugcentral.dump.08292017.sql"
-##
-##structures = get_table(filename, 'structures')
-##file_arr = get_tables(filename, ['pharma_class', 'identifier'])
-##pharma_class = file_arr[0]
-##print pharma_class.count()
-##identifier = file_arr[1]
-##
-##queried_dict_1 = left_join(structures, 'id', pharma_class, 'struct_id', suffixl = "_struct", suffixr = "_pc")
-##queried_dict_2 = left_join(queried_dict_1, 'id_struct', identifier, 'struct_id', suffixl = '_spc', suffixr = '_ident')
-##
-##qd_slim_1 = queried_dict_2[queried_dict_2['type'].notnull()]
-##print qd_slim_1.head()
-##qd_slim_2 = qd_slim_1[(qd_slim_1.id_type == 'ChEMBL_ID')|(qd_slim_1.id_type == 'DRUGBANK_ID')]
-##qd_slim_3 = select(qd_slim_2, ['cd_id', 'id_struct', 'name_struct', 'type', 'name_pc', 'class_code', 'identifier'])
-##print qd_slim_3.head()
-##print qd_slim_3.count()
-
-##structures = get_table(filename, 'structures')
-##pharma_class = get_table(filename, 'pharma_class')
-##identifier = get_table(filename, 'identifier')
-##
-### nan = np.nan
-##merged = structures.merge(pharma_class, left_on='id', right_on='struct_id', how='left', suffixes=('_struct', '_pc'))
-##merged_2 = merged.merge(identifier, left_on='id_struct', right_on='struct_id', how='left', suffixes=('_spc', '_ident'))
-##print merged_2.head()
-##print merged_2.count()
-##merged_3 = merged_2[merged_2['type'].notnull()]
-### print merged_3.head()
-##merged_4 = merged_3[(merged_3.id_type == 'ChEMBL_ID')|(merged_3.id_type == 'DRUGBANK_ID')]
-### print merged_4.count()
